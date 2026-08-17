@@ -1,39 +1,801 @@
-<section class="articles-section">
+<!DOCTYPE html>
 
-  <div class="section-title">
-    <h2>最新文章</h2>
-    <p>ChatGPT 使用教程、会员指南与实用技巧</p>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ChatGPT教程与会员指南</title>
+
+<meta
+name="description"
+content="ChatGPT教程与会员指南，提供 ChatGPT Plus、Pro、Codex 使用教程、会员方案介绍、功能对比以及常见问题解答。"
+
+>
+
+<meta
+name="keywords"
+content="ChatGPT教程, ChatGPT Plus, ChatGPT Pro, ChatGPT会员, ChatGPT使用教程, ChatGPT Codex, ChatGPT会员指南"
+
+>
+
+  <meta name="author" content="ChatGPT教程与会员指南">
+
+  <link
+    rel="canonical"
+    href="https://sangou123.github.io/chatgpt-blog/"
+  >
+
+<meta
+property="og:title"
+content="ChatGPT教程与会员指南"
+
+>
+
+<meta
+property="og:description"
+content="ChatGPT Plus、Pro、Codex 使用教程、会员方案介绍与实用指南。"
+
+>
+
+  <meta property="og:type" content="website">
+
+<meta
+property="og:url"
+content="https://sangou123.github.io/chatgpt-blog/"
+
+>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f6f7f9;
+      color: #222;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Microsoft YaHei",
+        Arial,
+        sans-serif;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       顶部导航
+    ========================= */
+
+    nav {
+      background: #111827;
+      border-bottom: 1px solid #374151;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    /* =========================
+       Hero
+    ========================= */
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 75px 20px 80px;
+      text-align: center;
+    }
+
+    header h1 {
+      max-width: 900px;
+      margin: 0 auto 18px;
+      font-size: 42px;
+      line-height: 1.35;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #d1d5db;
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin: 5px 6px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .hero-button.secondary {
+      background: #374151;
+    }
+
+    .hero-button:hover {
+      opacity: .9;
+    }
+
+    /* =========================
+       主体
+    ========================= */
+
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .section {
+      margin-bottom: 55px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      color: #111827;
+      font-size: 30px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    /* =========================
+       功能介绍
+    ========================= */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, .03);
+    }
+
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      color: #111827;
+      font-size: 19px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       文章
+    ========================= */
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .article-card {
+      display: block;
+      background: #fff;
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    }
+
+    .article-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .article-card h3 {
+      margin: 0 0 10px;
+      color: #111827;
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .article-card p {
+      margin: 0 0 15px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .read-more {
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       分类
+    ========================= */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      background: #fff;
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .category-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .category-card p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* =========================
+       订阅入口
+    ========================= */
+
+    .service-box {
+      padding: 35px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .service-box h2 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+
+    .service-box p {
+      max-width: 700px;
+      margin: 10px auto;
+      color: #4b5563;
+    }
+
+    .service-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* =========================
+       页脚
+    ========================= */
+
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #d1d5db;
+      text-decoration: none;
+    }
+
+    /* =========================
+       手机端
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 55px 18px 60px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      header p {
+        font-size: 15px;
+      }
+
+      .feature-grid,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        padding: 13px 15px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      main {
+        padding: 35px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 26px;
+      }
+
+      .article-card {
+        padding: 22px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     导航
+========================= -->
+
+<nav>
+
+  <div class="nav-inner">
+
+```
+<a href="index.html" class="logo">
+  ChatGPT教程与会员指南
+</a>
+
+<div class="nav-links">
+
+  <a href="#features">
+    功能介绍
+  </a>
+
+  <a href="#articles">
+    文章
+  </a>
+
+  <a href="#categories">
+    分类
+  </a>
+
+</div>
+```
+
   </div>
 
-  <div class="articles-grid">
+</nav>
 
-    <a href="https://sangou123.github.io/chatgpt-blog/chatgpt-pro-5x-vs-20x.html" class="article-card">
+<!-- =========================
+     Hero
+========================= -->
 
-      <div class="article-card-content">
+<header>
 
-        <div class="article-tag">
-          ChatGPT Pro
-        </div>
+  <h1>
+    ChatGPT教程与会员指南
+  </h1>
 
-        <h3>
-          ChatGPT Pro 5x 和 Pro 20x 有什么区别？
-          到底该怎么选？
-        </h3>
+  <p>
+    ChatGPT 使用教程、Plus / Pro 会员指南、
+    Codex 编程以及实用功能介绍
+  </p>
 
-        <p>
-          详细介绍 ChatGPT Pro 的主要功能，
-          并分析 Pro 5x 和 Pro 20x 的区别、
-          使用额度以及适合人群。
-        </p>
+  <div class="hero-buttons">
 
-        <span class="read-more">
-          阅读全文 →
-        </span>
+```
+<a href="#articles" class="hero-button">
+  查看最新文章
+</a>
 
-      </div>
-
-    </a>
+<a href="#features" class="hero-button secondary">
+  了解 ChatGPT 功能
+</a>
+```
 
   </div>
 
-</section>
+</header>
+
+<main>
+
+  <!-- =========================
+       功能介绍
+  ========================= -->
+
+  <section class="section" id="features">
+
+```
+<div class="section-title">
+
+  <h2>
+    ChatGPT 核心功能介绍
+  </h2>
+
+  <p>
+    了解 ChatGPT 可以帮助你完成哪些工作
+  </p>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      🤖
+    </div>
+
+    <h3>
+      AI 对话与问答
+    </h3>
+
+    <p>
+      可以用于日常问答、知识查询、学习辅导、
+      内容整理以及各种复杂问题分析。
+    </p>
+
+  </div>
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      ✍️
+    </div>
+
+    <h3>
+      写作与内容创作
+    </h3>
+
+    <p>
+      可以辅助撰写文章、邮件、报告、营销内容，
+      也可以帮助修改和优化已有文本。
+    </p>
+
+  </div>
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      💻
+    </div>
+
+    <h3>
+      编程与 Codex
+    </h3>
+
+    <p>
+      适合代码生成、代码分析、Debug、
+      项目开发以及软件工程相关任务。
+    </p>
+
+  </div>
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      📄
+    </div>
+
+    <h3>
+      文件与资料分析
+    </h3>
+
+    <p>
+      可以辅助分析文档、表格和其他资料，
+      帮助提取信息、整理内容和提高办公效率。
+    </p>
+
+  </div>
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      🔎
+    </div>
+
+    <h3>
+      深度研究
+    </h3>
+
+    <p>
+      适合需要进行资料整理、信息分析、
+      市场研究和复杂问题研究的用户。
+    </p>
+
+  </div>
+
+
+  <div class="feature-card">
+
+    <div class="feature-icon">
+      🎨
+    </div>
+
+    <h3>
+      图片与多模态
+    </h3>
+
+    <p>
+      根据当前账户支持情况，可以使用图片理解、
+      图片生成等多模态相关能力。
+    </p>
+
+  </div>
+
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================
+       最新文章
+  ========================= -->
+
+  <section class="section" id="articles">
+
+```
+<div class="section-title">
+
+  <h2>
+    最新文章
+  </h2>
+
+  <p>
+    ChatGPT Plus、Pro 以及实用功能使用指南
+  </p>
+
+</div>
+
+
+<div class="article-grid">
+
+
+  <a
+    href="chatgpt-pro-5x-vs-20x.html"
+    class="article-card"
+  >
+
+    <div class="article-tag">
+      ChatGPT Pro
+    </div>
+
+    <h3>
+      ChatGPT Pro 5x 和 Pro 20x 有什么区别？到底该怎么选？
+    </h3>
+
+    <p>
+      详细介绍 ChatGPT Pro 的主要功能，
+      并从使用额度、Codex 编程、文件分析、
+      使用场景和适合人群等方面分析 Pro 5x 和 Pro 20x 的区别。
+    </p>
+
+    <span class="read-more">
+      阅读全文 →
+    </span>
+
+  </a>
+
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================
+       文章分类
+  ========================= -->
+
+  <section class="section" id="categories">
+
+```
+<div class="section-title">
+
+  <h2>
+    内容分类
+  </h2>
+
+  <p>
+    按照不同需求快速找到相关内容
+  </p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+  <div class="category-card">
+
+    <h3>
+      ChatGPT 教程
+    </h3>
+
+    <p>
+      ChatGPT 使用方法、功能介绍和实用技巧
+    </p>
+
+  </div>
+
+
+  <div class="category-card">
+
+    <h3>
+      Plus / Pro 会员
+    </h3>
+
+    <p>
+      会员方案、使用额度以及不同方案选择建议
+    </p>
+
+  </div>
+
+
+  <div class="category-card">
+
+    <h3>
+      Codex 编程
+    </h3>
+
+    <p>
+      AI 编程、代码开发以及 Codex 使用相关内容
+    </p>
+
+  </div>
+
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================
+       订阅服务
+  ========================= -->
+
+  <section class="section">
+
+```
+<div class="service-box">
+
+  <h2>
+    ChatGPT Plus / Pro 订阅协助
+  </h2>
+
+  <p>
+    如果没有合适的海外付款方式，
+    可以根据自己的实际需求了解 ChatGPT Plus / Pro 订阅方式。
+  </p>
+
+  <p>
+    提供本人账号订阅协助，不提供多人共享账号。
+  </p>
+
+  <a
+    href="https://yannaoai.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="service-button"
+  >
+    前往订阅
+  </a>
+
+</div>
+```
+
+  </section>
+
+</main>
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 ChatGPT教程与会员指南
+  </p>
+
+  <p>
+    ChatGPT 使用教程 · Plus / Pro 会员指南 · Codex 编程
+  </p>
+
+</footer>
+
+</body>
+</html>
