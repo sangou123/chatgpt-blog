@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sangou123.github.io/chatgpt-blog/sitemap.xml
